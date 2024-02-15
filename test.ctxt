@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=test
+comment1.params=
+comment1.target=test()
+comment2.params=
+comment2.target=void\ chooseNextMove()
+comment3.params=
+comment3.target=void\ calculateUp()
+comment4.params=
+comment4.target=void\ calculateDown()
+comment5.params=
+comment5.target=void\ calculateLeft()
+comment6.params=
+comment6.target=void\ calculateRight()
+comment7.params=
+comment7.target=void\ spawnNew()
+comment8.params=
+comment8.target=void\ drawGrid()
+numComments=9
