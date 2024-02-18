@@ -13,7 +13,7 @@ public class test
     boolean moveMade = true;
     ArrayList<Integer> gridTransfer = new ArrayList<Integer>(16);
     
-    window window = new window();
+    //window window = new window();
     
     Scanner input = new Scanner(System.in);
     Random rng = new Random();
@@ -325,8 +325,8 @@ public class test
             System.out.println();
         }
         while (gridLocation < gridTransfer.size()){
-            window.updateIcons((gridLocation + 1),gridTransfer.get(gridLocation));
-            System.out.println(gridLocation);
+            //window.updateIcons((gridLocation + 1),gridTransfer.get(gridLocation));
+            //System.out.println(gridLocation);
             gridLocation++;
         }
         returnGrid();
