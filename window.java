@@ -49,6 +49,7 @@ public class window extends JFrame implements ActionListener
     JMenu file = new JMenu("File");
     JMenu settings = new JMenu("Settings");
     JMenu help = new JMenu("Help");
+    JPanel grid;
     
     // file
     JMenuItem saveItem = new JMenuItem("Save High Score");
@@ -116,11 +117,28 @@ public class window extends JFrame implements ActionListener
         JPanel title = new JPanel();
         JLabel title2048 = new JLabel("GALAXY S24");
         title2048.setFont(new Font("samsungSans",1,63));
-        System.out.println(title2048.getFont());
         title.setBackground(Color.blue);
         title.setPreferredSize(new Dimension(0,100));
         title.add(title2048);
         
+        grid.add(slotOne);
+        grid.add(slotTwo);
+        grid.add(slotThree);
+        grid.add(slotFour);
+        grid.add(slotFive);
+        grid.add(slotSix);
+        grid.add(slotSeven);
+        grid.add(slotEight);
+        grid.add(slotNine);
+        grid.add(slotTen);
+        grid.add(slotEleven);
+        grid.add(slotTwelve);
+        grid.add(slotThirteen);
+        grid.add(slotFourteen);
+        grid.add(slotFifteen);
+        grid.add(slotSixteen);
+        
+        slotSixteen.setIcon(tile2048);
         
         //this.setLayout(new BorderLayout());
         this.add(grid, BorderLayout.CENTER);
@@ -130,6 +148,651 @@ public class window extends JFrame implements ActionListener
         this.setVisible(true);
     }
     
+    public void updateIcons(int gridSpot, int tileNumber){
+        System.out.println("updated icon for " + gridSpot + " " + tileNumber);
+        switch (gridSpot){ // what tile spot to update
+            case 1: // 0,0
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+            case 2:
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+            case 3:
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+            case 4:
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+            case 5:
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+            case 6:
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+            case 7:
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+            case 8:
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+            case 9:
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+            case 10:
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+            case 11:
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+            case 12:
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+            case 13:
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+            case 14:
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+            case 15:
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+            case 16:
+                switch (tileNumber){ // what to update it with
+                    case 0:
+                        slotOne.setIcon(tile0);
+                        break;
+                    case 2:
+                        slotOne.setIcon(tile2);
+                        break;
+                    case 4:
+                        slotOne.setIcon(tile4);
+                        break;
+                    case 8:
+                        slotOne.setIcon(tile8);
+                        break;
+                    case 16:
+                        slotOne.setIcon(tile16);
+                        break;
+                    case 32:
+                        slotOne.setIcon(tile32);
+                        break;
+                    case 64:
+                        slotOne.setIcon(tile64);
+                        break;
+                    case 128:
+                        slotOne.setIcon(tile128);
+                        break;
+                    case 256:
+                        slotOne.setIcon(tile256);
+                        break;
+                    case 512:
+                        slotOne.setIcon(tile512);
+                        break;
+                    case 1024:
+                        slotOne.setIcon(tile1024);
+                        break;
+                    case 2048:
+                        slotOne.setIcon(tile2048);
+                        break;
+                }
+                break;
+        }
+    }
     
     public void actionPerformed(ActionEvent e){
         String cmd = e.getActionCommand();

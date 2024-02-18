@@ -4,11 +4,9 @@ Tell the reader (someone who does not know anything about this project)
 all they need to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
-PROJECT TITLE: 2048?
-PURPOSE OF PROJECT: do 2048
-VERSION or DATE: dont remember
-HOW TO START THIS PROJECT: 
+PROJECT TITLE:
+PURPOSE OF PROJECT:
+VERSION or DATE:
+HOW TO START THIS PROJECT:
 AUTHORS:
 USER INSTRUCTIONS:
-All the tiles need to be under "Icons" folder
-and all the images need to be under "Images" Folder

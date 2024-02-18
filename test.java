@@ -312,14 +312,20 @@ public class test
     }
     
     public void drawGrid(){
+        int gridLocation = 0;
         //System.out.print("\f");
         //System.out.println("<-2048->");
         System.out.println();
         for (int x = 0; x < 4; x++){
             for (int y = 0; y < 4; y++){
                 System.out.print(grid[x][y]);
+                gridTransfer.add(grid[x][y]);
             }
             System.out.println();
+        }
+        for (int i = 0; i < gridTransfer.size(); i++){
+            window.updateIcons((i),gridTransfer.get(i));
+            System.out.println(i);
         }
         returnGrid();
         chooseNextMove();
