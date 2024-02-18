@@ -313,6 +313,7 @@ public class test
     
     public void drawGrid(){
         int gridLocation = 0;
+        gridTransfer.clear();
         //System.out.print("\f");
         //System.out.println("<-2048->");
         System.out.println();
@@ -323,9 +324,10 @@ public class test
             }
             System.out.println();
         }
-        for (int i = 0; i < gridTransfer.size(); i++){
-            window.updateIcons((i),gridTransfer.get(i));
-            System.out.println(i);
+        while (gridLocation < gridTransfer.size()){
+            window.updateIcons((gridLocation + 1),gridTransfer.get(gridLocation));
+            System.out.println(gridLocation);
+            gridLocation++;
         }
         returnGrid();
         chooseNextMove();
