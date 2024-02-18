@@ -9,28 +9,39 @@ import java.util.*;
 
 public class test
 {
-    int lastMove; // 1 = up, 2 = down, 3 = left, 4 = right
     int grid[][] = new int[4][4];
     boolean moveMade = true;
-    ArrayList<Integer> upX = new ArrayList<Integer>(4);
-    ArrayList<Integer> upY = new ArrayList<Integer>(4);
-        
-    ArrayList<Integer> downX = new ArrayList<Integer>(4);
-    ArrayList<Integer> downY = new ArrayList<Integer>(4);
-        
-    ArrayList<Integer> leftX = new ArrayList<Integer>(4);
-    ArrayList<Integer> leftY = new ArrayList<Integer>(4);
+    ArrayList<Integer> gridTransfer = new ArrayList<Integer>(16);
     
-    ArrayList<Integer> rightX = new ArrayList<Integer>(4);
-    ArrayList<Integer> rightY = new ArrayList<Integer>(4);
+    window window = new window();
     
     Scanner input = new Scanner(System.in);
     Random rng = new Random();
     public test(){
+        /*
+        grid[0][0] = 1;
+        grid[0][1] = 2;
+        grid[0][2] = 3;
+        grid[0][3] = 4;
+        grid[1][0] = 5;
+        grid[1][1] = 6;
+        grid[1][2] = 7;
+        grid[1][3] = 8;
+        grid[2][0] = 9;
+        grid[2][1] = 10;
+        grid[2][2] = 11;
+        grid[2][3] = 12;
+        grid[3][0] = 13;
+        grid[3][1] = 14;
+        grid[3][2] = 15;
+        grid[3][3] = 16;
+        */
         spawnNew();
         moveMade = true;
         spawnNew();
+        spawnNew();
         drawGrid();
+        gridTransferFunction();
     }
     
     public void chooseNextMove(){
@@ -41,15 +52,12 @@ public class test
                 calculateUp();
                 break;
             case 'd': // down
-                lastMove = 2;
                 calculateDown();
                 break;
             case 'l': // left
-                lastMove = 3;
                 calculateLeft();
                 break;
             case 'r': // right
-                lastMove = 4;
                 calculateRight();
                 break;
             default : // nothing done
@@ -58,12 +66,38 @@ public class test
     }
     
     public void calculateUp(){ // calculates moves up
-        System.out.println("UP");
+        // first column
+        checkNumbers(1,0, 0,0); // checking down to up
+        checkNumbers(2,0, 0,0); // 3,0 starts from the
+        checkNumbers(3,0, 0,0); // bottom left most tile
+        checkNumbers(1,0, 1,0); // 2,0 starts from the second to bottom most tile
+        checkNumbers(2,0, 1,0); // and scans up
+        checkNumbers(1,0, 2,0); // second from the top most tile, scans the top most tile
+        // second column
+        checkNumbers(1,1, 0,1);
+        checkNumbers(2,1, 0,1);
+        checkNumbers(3,1, 0,1);
+        checkNumbers(1,1, 1,1);
+        checkNumbers(2,1, 1,1);
+        checkNumbers(1,1, 2,1);
+        // third column
+        checkNumbers(1,2, 0,2);
+        checkNumbers(2,2, 0,2);
+        checkNumbers(3,2, 0,2);
+        checkNumbers(1,2, 1,2);
+        checkNumbers(2,2, 1,2);
+        checkNumbers(1,2, 2,2);
+        // fourth column
+        checkNumbers(1,3, 0,3);
+        checkNumbers(2,3, 0,3);
+        checkNumbers(3,3, 0,3);
+        checkNumbers(1,3, 1,3);
+        checkNumbers(2,3, 1,3);
+        checkNumbers(1,3, 2,3);
         spawnNew();
     }
     
     public void calculateDown(){ // calculates moves down
-        System.out.println("DOWN");
         // first column
         checkNumbers(2,0, 3,0); // checking down to up
         checkNumbers(1,0, 3,0); // 3,0 starts from the
@@ -85,7 +119,7 @@ public class test
         checkNumbers(1,2, 2,2);
         checkNumbers(0,2, 2,2);
         checkNumbers(0,2, 1,2);
-        // third column
+        // fourth column
         checkNumbers(2,3, 3,3);
         checkNumbers(1,3, 3,3);
         checkNumbers(0,3, 3,3);
@@ -179,7 +213,7 @@ public class test
                     grid[nextX][nextY] = 8;
                     moveMade = true;
                     break;
-                case 8:
+                case 8: 
                     System.out.println("merging 8");
                     grid[prevX][prevY] = 0;
                     grid[nextX][nextY] = 16;
@@ -228,8 +262,6 @@ public class test
                     moveMade = true;
                     //winGame();
                     break;
-                default :
-                    System.out.println("how the fuck did you make it here?");
             }
         } else { // IF THEY are different
             switch (checking){
@@ -267,6 +299,18 @@ public class test
         return;
     }
     
+    public void returnGrid(){
+        for (int x = 0; x < 4; x++){
+            for (int y = 0; y < 4; y++){
+                gridTransfer.add(grid[x][y]);
+            }
+        }
+    }
+    
+    public ArrayList<Integer> gridTransferFunction(){
+        return gridTransfer;
+    }
+    
     public void drawGrid(){
         //System.out.print("\f");
         //System.out.println("<-2048->");
@@ -277,6 +321,7 @@ public class test
             }
             System.out.println();
         }
+        returnGrid();
         chooseNextMove();
     }
 }
