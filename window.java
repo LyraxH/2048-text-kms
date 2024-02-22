@@ -36,6 +36,8 @@ public class window extends JFrame implements ActionListener, KeyListener
     JLabel slotFourteen = new JLabel(); // 3,1
     JLabel slotFifteen = new JLabel(); // 3,2
     JLabel slotSixteen = new JLabel(); // 3,3
+    JLabel newTile = new JLabel(); // spawns behind the newest spawned tile
+    JLabel fillerTile = new JLabel();
     
     ImageIcon tile0 = new ImageIcon("Icons/0.png");
     ImageIcon tile2 = new ImageIcon("Icons/2.png");
@@ -49,12 +51,14 @@ public class window extends JFrame implements ActionListener, KeyListener
     ImageIcon tile512 = new ImageIcon("Icons/512.png");
     ImageIcon tile1024 = new ImageIcon("Icons/1024.png");
     ImageIcon tile2048 = new ImageIcon("Icons/2048.png");
+    ImageIcon tileSpawn = new ImageIcon("Icons/newTile.png");
     
     JMenuBar menuBar = new JMenuBar();
     JMenu file = new JMenu("File");
     JMenu settings = new JMenu("Settings");
     JMenu help = new JMenu("Help");
     JPanel gridPanel = new JPanel();
+    JPanel gridPanelNew = new JPanel();
     
     // file
     JMenuItem saveItem = new JMenuItem("Save High Score");
@@ -976,6 +980,8 @@ public class window extends JFrame implements ActionListener, KeyListener
     }
     
     public void calculateRight(){ // calculates moves to the right
+        
+        /*
         // top line
         checkNumbers(0,2, 0,3); // starts checking right to left
         checkNumbers(0,1, 0,3); // 0,3 starts from the
@@ -1004,6 +1010,20 @@ public class window extends JFrame implements ActionListener, KeyListener
         checkNumbers(3,1, 3,2);
         checkNumbers(3,0, 3,2);
         checkNumbers(3,0, 3,1);
+        */
+        
+        if (grid[0][3] == 0){ // if slot four is 0
+            grid[0][3] = grid[0][2]; // slot 3 replaces slot 4  
+            grid[0][2] = 0;
+        } else { // if slot 4 is not zero
+            if (grid[0][2] == 0){ // check if slot 3 is
+                // if it is
+            } else { 
+                if (grid[0][1] == 0){ // if it isnt check slot 2
+                    
+                }
+            }
+        }
         
         spawnNew();
     }
@@ -1016,61 +1036,61 @@ public class window extends JFrame implements ActionListener, KeyListener
         if (current == checking){ // checking is the same as the next one over
             switch (checking){ // merge
                 case 2:
-                    System.out.println("merging 2");
+                    //System.out.println("merging 2");
                     grid[prevX][prevY] = 0;
                     grid[nextX][nextY] = 4;
                     moveMade = true;
                     break;
                 case 4:
-                    System.out.println("merging 4");
+                    //System.out.println("merging 4");
                     grid[prevX][prevY] = 0;
                     grid[nextX][nextY] = 8;
                     moveMade = true;
                     break;
                 case 8: 
-                    System.out.println("merging 8");
+                    //System.out.println("merging 8");
                     grid[prevX][prevY] = 0;
                     grid[nextX][nextY] = 16;
                     moveMade = true;
                     break;
                 case 16:
-                    System.out.println("merging 16");
+                    //System.out.println("merging 16");
                     grid[prevX][prevY] = 0;
                     grid[nextX][nextY] = 32;
                     moveMade = true;
                     break;
                 case 32:
-                    System.out.println("merging 32");
+                    //System.out.println("merging 32");
                     grid[prevX][prevY] = 0;
                     grid[nextX][nextY] = 64;
                     moveMade = true;
                     break;
                 case 64:
-                    System.out.println("merging 64");
+                    //System.out.println("merging 64");
                     grid[prevX][prevY] = 0;
                     grid[nextX][nextY] = 128;
                     moveMade = true;
                     break;
                 case 128:
-                    System.out.println("merging 128");
+                    //System.out.println("merging 128");
                     grid[prevX][prevY] = 0;
                     grid[nextX][nextY] = 256;
                     moveMade = true;
                     break;
                 case 256:
-                    System.out.println("merging 256");
+                    //System.out.println("merging 256");
                     grid[prevX][prevY] = 0;
                     grid[nextX][nextY] = 512;
                     moveMade = true;
                     break;
                 case 512:
-                    System.out.println("merging 512");
+                    //System.out.println("merging 512");
                     grid[prevX][prevY] = 0;
                     grid[nextX][nextY] = 1024;
                     moveMade = true;
                     break;
                 case 1024:
-                    System.out.println("merging 2048");
+                    //System.out.println("merging 2048");
                     grid[prevX][prevY] = 0;
                     grid[nextX][nextY] = 2048;
                     moveMade = true;
@@ -1098,9 +1118,14 @@ public class window extends JFrame implements ActionListener, KeyListener
                 gameOver();
             }
         } else {
-            if (moveMade){
-                grid[spawnX][spawnY] = 2;
-                System.out.println("Spawned in " + spawnX + ", " + spawnY); //commenting out because we no longer need this clutter
+            if (moveMade){ // commented out cuurently is the code that changes whether or not a 4 or a 2 spawns.
+                //if (spawnX == 1){
+                    grid[spawnX][spawnY] = 2;
+                    //System.out.println("Spawned 4in " + spawnX + ", " + spawnY); //commenting out because we no longer need
+                //} else {
+                    //grid[spawnX][spawnY] = 2;
+                    //System.out.println("Spawned 2 in " + spawnX + ", " + spawnY); //commenting out because we no longer need
+                //}
                 moveMade = false;
             } else {
                 System.out.println("Tile cannot be spawned as move has not been made");
@@ -1119,10 +1144,10 @@ public class window extends JFrame implements ActionListener, KeyListener
         gridTransfer.clear();
         for (int x = 0; x < 4; x++){
             for (int y = 0; y < 4; y++){
-                System.out.print(grid[x][y]);
+                ///System.out.print(grid[x][y]);
                 gridTransfer.add(grid[x][y]);
             }
-            System.out.println();
+            //System.out.println();
         }
         while (gridLocation < gridTransfer.size()){
             updateIcons((gridLocation + 1),gridTransfer.get(gridLocation));
